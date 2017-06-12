@@ -90,4 +90,7 @@ label {
 
 #heart {
   color: gray;
+  &:active{
+    color: red;
+  }
 }
