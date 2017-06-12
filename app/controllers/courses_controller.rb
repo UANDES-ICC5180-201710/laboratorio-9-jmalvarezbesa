@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @preferences = Preference.where("course_id = ?", params[:id])
   end
 
   # GET /courses/new
