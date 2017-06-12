@@ -19,7 +19,7 @@
         <td class="td" id="td"><%= course.title %></td>
         <td><%= course.code %></td>
         <td><%= course.teacher %></td>
-        <td><span class="btn-link glyphicon glyphicon-heart" ></span></td>
+        <td><span class="btn-link glyphicon glyphicon-heart" id="heart" ></span></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
