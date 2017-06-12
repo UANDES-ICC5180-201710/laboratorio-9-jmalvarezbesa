@@ -5,10 +5,17 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-
+    @preferences = []
+    @courses.each do |course|
+      @preferences.append (Preference.where("course_id = ?", course.id).length)
+    end
     if params[:title]
       @courses = @courses.where("lower(title) like ?", "%#{params[:title]}%")
     end
+  end
+
+  public def  ajaxFunction
+    puts ("blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
   end
 
   # GET /courses/1

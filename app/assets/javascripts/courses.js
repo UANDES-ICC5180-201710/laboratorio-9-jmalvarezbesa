@@ -10,4 +10,25 @@ $(document).ready(function() {
   }).on('ajax:error', function(e, xhr, status, error) {
     alert(error);
   });
+    $("span").click(function(){
+        if ( $(this).hasClass("active") ) {
+            $(this).removeClass("active");
+
+        }
+        else {
+            $(this).addClass("active");
+            $.ajax({
+                type: "POST",
+                url: 'courses/ajaxFunction',
+                data: {"course_id": 1},
+                datatype: 'json',
+                contentType: 'application/json; charset=utf-8'
+            }).done(function (msg) {
+                alert('done');
+            }).fail(function (msg) {
+                alert("Sorry couldn't find what you want");
+            })
+        }
+    });
 });
+

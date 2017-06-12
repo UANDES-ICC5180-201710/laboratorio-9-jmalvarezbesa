@@ -88,9 +88,9 @@ label {
   display: block;
 }
 
-#heart {
+.glyphicon-heart {
   color: gray;
-  &:active{
-    color: red;
-  }
+}
+.glyphicon-heart.active{
+  color: red;
 }
